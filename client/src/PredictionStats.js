@@ -1,0 +1,31 @@
+import React, { Component } from 'react';
+
+export class PredictionStats extends Component {
+  state = { stats:['rikard', 'lisa', 'henrik'] }
+
+  // Lifecycle Methods:
+  componentDidMount() {
+    this.getPredictionStats()
+      .then( body => this.setState({ stats: body }) );
+      console.log(this.state)
+  }
+
+  // Functions:
+  async getPredictionStats() {
+    const response = await fetch('/api/users');
+    const body = await response.json();
+    console.log(body);
+    return body;
+  }
+
+//<textarea className="textarea" readOnly value={this.state.stats} rows="26"></textarea>
+//<p>{this.props.smiles}</p>
+  // Render:
+  render() {
+    return (
+      <div>
+        {this.state.stats.map(function(i){return <li key={i}>{i.id} --> {i.name}</li>})}
+      </div>
+    )
+  }
+}
