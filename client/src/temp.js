@@ -1,4 +1,3 @@
-
 state = {
   stats: "No changes"
 };
@@ -20,7 +19,7 @@ async getPredictionStatistics() {
 }
 
 componentDidMount() {
-  this.getPredictionStatistics().then( res => this.setState({ stats: res }))
+  this.getPredictionStatistics().then( res => this.setState({ stats: res }) )
 }
 
 
@@ -39,5 +38,5 @@ const square = function(x) {
 const square = (x) => {
   return x * x;
 }
-// Conside Arrow Function Expression
+// Consise Arrow Function Expression
 const square = x => x * x;

@@ -24,7 +24,7 @@ export class PredictionStats extends Component {
   render() {
     return (
       <div>
-        {this.state.stats.map(function(i){return <li key={i}>{i.id} --> {i.name}</li>})}
+        {this.state.stats.map((entry, i) => <li key={i}> {entry.id} --> {entry.name}</li>)}
       </div>
     )
   }

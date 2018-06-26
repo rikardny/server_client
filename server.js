@@ -8,19 +8,19 @@ const t2estAPI = 'https://metpred.service.pharmb.io/v1/predictionHR?smiles=c1ccc
 const testAPI = 'https://jsonplaceholder.typicode.com/'
 
 // Routes:
-app.get('/api/:wish', (request, response) => {
-  metpred(request.params.wish).then(data => response.send(data));
+app.get('/api/:method', (request, response) => {
+  let method = request.params.method;
+  metpred(method).then(data => response.send(data));
 });
 
 
+
 // Functions:
-async function metpred(wish) {
-  //const baseUrl = 'https://metpred.service.pharmb.io/v1/predictionHR?smiles=';
-  console.log('Fetching from "' + testAPI + wish + '"')
-  //const response = await fetch(baseUrl + smiles);
-  const response = await fetch(testAPI + wish);
+async function metpred(method) {
+  console.log('Fetching from "' + testAPI + method + '"')
+  const response = await fetch(testAPI + method);
   if (response.status === 200) {
-    console.log("Fetching " + wish + " successful!")
+    console.log("Fetching " + method + " successful!")
     const data = await response.json();
     return data;
   }
@@ -28,15 +28,5 @@ async function metpred(wish) {
     console.log("FAILED")
     return 'Error!'}
 }
-
-  /*
-  fetch(testAPI)
-    .then(function(result) {
-      return result.text();
-    })
-    .then(function(data) {
-      response.send('hello world');
-    })
-  */
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
