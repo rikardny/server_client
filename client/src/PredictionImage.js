@@ -20,7 +20,9 @@ export class PredictionImage extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.smiles}</div>
+        <div>
+          <p>{this.props.smiles}</p>
+        </div>
         <img src={this.state.url} alt='molecule' width='100%'/>
       </div>
     )
