@@ -6,15 +6,13 @@ export class PredictionStats extends Component {
   // Lifecycle Methods:
   componentDidMount() {
     this.getPredictionStats()
-      .then( body => this.setState({ stats: body }) );
-      console.log(this.state)
+      .then( body => this.setState({ stats: body }) )
   }
 
   // Functions:
   async getPredictionStats() {
     const response = await fetch('/api/users');
     const body = await response.json();
-    console.log(body);
     return body;
   }
 

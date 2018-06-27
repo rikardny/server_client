@@ -23,7 +23,9 @@ export class PredictionImage extends Component {
         <div>
           <p>{this.props.smiles}</p>
         </div>
-        <img src={this.state.url} alt='molecule' width='100%'/>
+        <div>
+          <img src={this.state.url} alt='molecule' width='100%'/>
+        </div>
       </div>
     )
   }
