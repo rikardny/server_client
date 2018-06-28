@@ -13,16 +13,15 @@ export class PredictionImage extends Component {
   async getPredictionImage() {
     const response = await fetch('/api/photos');
     const body = await response.json();
-    return body[12].url;
+    let rand = Math.floor((Math.random() * 5000) + 1); // Extra flare!!!
+    return body[rand].url;
   }
 
   // Render:
   render() {
     return (
       <div>
-        <div>
-          <p>{this.props.smiles}</p>
-        </div>
+        <textarea className="textarea" id="log" ></textarea>
         <div>
           <img src={this.state.url} alt='molecule' width='100%'/>
         </div>

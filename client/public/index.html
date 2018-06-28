@@ -16,16 +16,16 @@
         jsmeApplet = new JSApplet.JSME("jsme_container", "100%", "600px", {"jme": startingStructure});
         jsmeApplet.setCallBack('AfterStructureModified', updateSmiles);
         document.JME = jsmeApplet;
+
+        document.getElementById("log").value = "";
       }
       function updateSmiles() {
-        document.getElementById('outputSmiles').value = document.JME.smiles();
+        document.getElementById("log").value = document.JME.smiles();
       }
     </script>
 
   </head>
   <body>
-
-    <div id="app"></div>
-
+    <div id="app"></div>  <!-- Main injection point for React -->
   </body>
 </html>

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { PredictionImage } from './PredictionImage';
 import { PredictionStats } from './PredictionStats';
 
-export class DataBox extends Component {
+export class ResultBox extends Component {
+  // Render:
   render() {
     return (
       <div className="container" >
@@ -16,7 +17,7 @@ export class DataBox extends Component {
           </div>
 
           <div className="tile is-parent">
-            <div className="tile is-child">
+            <div className="tile is-child box">
               <p className="title" >This will show prediction data from API:</p>
               <PredictionStats smiles={this.props.smiles} />
             </div>

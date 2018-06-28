@@ -4,7 +4,7 @@ export class Methods extends Component {
   render() {
     return(
       <div>
-        <button className="button is-danger is-large" onClick={this.props.onChange}>Metpred</button>
+        <button className="button is-warning is-large" onClick={this.props.onChange}>Metpred</button>
       </div>
     );
   }
