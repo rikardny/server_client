@@ -12,17 +12,13 @@ export class App extends Component {
     this.setState({ smiles: value });
   }
 
-  handleChange() {
-    console.log('hej')
-  }
-
   // Render:
   render() {
     return (
       <div>
         <Header/>
         <div className="section">
-          <MenuBox onChange={this.changeSmile} />
+          <MenuBox onChange={this.changeSmile.bind(this)} />
         </div>
         <div className="section">
           <ResultBox smiles={this.state.smiles} />

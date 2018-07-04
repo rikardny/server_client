@@ -4,7 +4,6 @@ const fetch = require('isomorphic-fetch');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const t2estAPI = 'https://metpred.service.pharmb.io/v1/predictionHR?smiles=c1ccccc1'
 const testAPI = 'https://jsonplaceholder.typicode.com/'
 
 // Routes:

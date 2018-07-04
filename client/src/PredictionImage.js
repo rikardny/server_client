@@ -21,10 +21,7 @@ export class PredictionImage extends Component {
   render() {
     return (
       <div>
-        <textarea className="textarea" id="log" ></textarea>
-        <div>
-          <img src={this.state.url} alt='molecule' width='100%'/>
-        </div>
+        <img src={this.state.url} alt='molecule' width='100%'/>
       </div>
     )
   }

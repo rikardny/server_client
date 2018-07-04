@@ -5,7 +5,7 @@ import { Methods } from './Methods';
 export class MenuBox extends Component {
   render() {
     return (
-      <div className="container" >
+      <div className="container box" >
         <div className="tile is-ancestor">
 
           <div className="tile is-parent is-9">
@@ -15,7 +15,7 @@ export class MenuBox extends Component {
           </div>
 
           <div className="tile is-parent">
-            <div className="tile is-child box">
+            <div className="tile is-child">
               <Methods className="content" onChange={this.props.onChange} />
             </div>
           </div>
