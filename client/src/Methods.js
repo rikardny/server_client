@@ -5,10 +5,10 @@ export class Methods extends Component {
     super(props);
 
     this.state = {
-      Metpred: true,
+      Metpred: false,
       cpLogD: false,
-      PTP: true,
-      Prosilico: true
+      PTP: false,
+      Prosilico: false
     }
 
     this.handleClick = this.handleClick.bind(this);
