@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
 export class Methods extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    }
-  }
 
   // Render:
   render() {
@@ -17,13 +10,13 @@ export class Methods extends Component {
     let methodList = availableMethods.map(
       (method, i) => {
         let isActive = "";
-
+        
         if(activeMethods[i]) {
           isActive = "is-active";
         };
 
         return(
-          <a key={"method_" + i}
+          <a key={i}
             className={isActive}
             data-message={method}
             onClick={this.props.changeMethods} >

@@ -8,7 +8,7 @@ export class MenuBox extends Component {
       <div className="container box" >
         <div className="tile is-ancestor">
 
-          <div className="tile is-parent is-9">
+          <div className="tile is-parent is-8">
             <div className="tile is-child">
               <JSMEeditor className="content"/>
               </div>

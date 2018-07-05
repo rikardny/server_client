@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Header }from './Header';
 import { MenuBox } from './MenuBox';
-import { ResultBox } from './ResultBox';
+import { ResultList } from './ResultList';
 
 export class App extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export class App extends Component {
           <MenuBox methods={this.state} changeMethods={this.changeMethods}/>
         </div>
         <div className="section">
-          <ResultBox smiles={this.state.smiles} />
+          <ResultList methods={this.state}/>
         </div>
       </div>
     )
