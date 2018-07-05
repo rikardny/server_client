@@ -16,7 +16,10 @@ export class MenuBox extends Component {
 
           <div className="tile is-parent">
             <div className="tile is-child">
-              <Methods className="content" onChange={this.props.onChange} />
+              <Methods className="content"
+                methods={this.props.methods}
+                changeMethods={this.props.changeMethods}
+              />
             </div>
           </div>
 

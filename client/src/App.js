@@ -4,12 +4,23 @@ import { MenuBox } from './MenuBox';
 import { ResultBox } from './ResultBox';
 
 export class App extends Component {
-  state = { smiles: 'No molecule has been submitted yet.' }
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      Metpred: false,
+      cpLogD: false,
+      PTP: false,
+      Prosilico: false
+    }
+
+    this.changeMethods = this.changeMethods.bind(this);
+  }
 
   // Functions:
-  changeSmile() {
-    const value = document.JME.smiles();
-    this.setState({ smiles: value });
+  changeMethods(e) {
+    let m = e.target.dataset.message;
+    this.setState({ [m]: !this.state[m]});
   }
 
   // Render:
@@ -18,7 +29,7 @@ export class App extends Component {
       <div>
         <Header/>
         <div className="section">
-          <MenuBox onChange={this.changeSmile.bind(this)} />
+          <MenuBox methods={this.state} changeMethods={this.changeMethods}/>
         </div>
         <div className="section">
           <ResultBox smiles={this.state.smiles} />

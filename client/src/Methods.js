@@ -5,24 +5,14 @@ export class Methods extends Component {
     super(props);
 
     this.state = {
-      Metpred: false,
-      cpLogD: false,
-      PTP: false,
-      Prosilico: false
+
     }
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e) {
-    let m = e.target.dataset.message;
-    this.setState({ [m]: !this.state[m]});
   }
 
   // Render:
   render() {
-    let availableMethods = Object.keys(this.state);
-    let activeMethods = Object.values(this.state);
+    let availableMethods = Object.keys(this.props.methods);
+    let activeMethods = Object.values(this.props.methods);
 
     let methodList = availableMethods.map(
       (method, i) => {
@@ -36,7 +26,7 @@ export class Methods extends Component {
           <a key={"method_" + i}
             className={isActive}
             data-message={method}
-            onClick={this.handleClick} >
+            onClick={this.props.changeMethods} >
             {method}
           </a>
         )
