@@ -28,12 +28,8 @@ export class App extends Component {
     return (
       <div>
         <Header/>
-        <div className="section">
-          <MenuBox methods={this.state} changeMethods={this.changeMethods}/>
-        </div>
-        <div className="section">
-          <ResultList methods={this.state}/>
-        </div>
+        <MenuBox methods={this.state} changeMethods={this.changeMethods}/>
+        <ResultList methods={this.state} />
       </div>
     )
   }

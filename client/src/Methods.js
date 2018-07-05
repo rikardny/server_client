@@ -10,7 +10,7 @@ export class Methods extends Component {
     let methodList = availableMethods.map(
       (method, i) => {
         let isActive = "";
-        
+
         if(activeMethods[i]) {
           isActive = "is-active";
         };

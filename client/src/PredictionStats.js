@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export class PredictionStats extends Component {
-  state = { stats:['rikard', 'lisa', 'henrik'] }
+  state = { stats: [] }
 
   // Lifecycle Methods:
   componentDidMount() {
@@ -16,14 +16,14 @@ export class PredictionStats extends Component {
     return body;
   }
 
-//<textarea className="textarea" readOnly value={this.state.stats} rows="26"></textarea>
-//<p>{this.props.smiles}</p>
   // Render:
   render() {
     return (
-      <div>
-        {this.state.stats.map((entry, i) => <li key={i}> {entry.id} --> {entry.name}</li>)}
-      </div>
+      <article className="message is-dark">
+        <div className="message-body">
+          {this.state.stats.map((entry, i) => <li key={i}> {entry.id} --> {entry.name}</li>)}
+        </div>
+      </article>
     )
   }
 }
