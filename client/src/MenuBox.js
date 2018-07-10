@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { JSMEeditor } from './JSMEeditor';
-import { Methods } from './Methods';
+import { Models } from './Models';
 
 export class MenuBox extends Component {
   // Render:
@@ -18,9 +18,9 @@ export class MenuBox extends Component {
 
             <div className="tile is-parent">
               <div className="tile is-child">
-                <Methods
-                  methods={this.props.methods}
-                  changeMethods={this.props.changeMethods}
+                <Models
+                  models={this.props.models}
+                  changeModels={this.props.changeModels}
                 />
               </div>
             </div>

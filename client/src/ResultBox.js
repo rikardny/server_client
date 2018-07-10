@@ -7,7 +7,7 @@ export class ResultBox extends Component {
   render() {
     return (
       <div className="container notification">
-        <p className="title" >{this.props.method}</p>
+        <p className="title" >{this.props.model}</p>
         <div className="tile is-ancestor">
 
           <div className="tile is-parent is-3">

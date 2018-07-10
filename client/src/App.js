@@ -10,16 +10,17 @@ export class App extends Component {
 
     this.state = {
       Metpred: false,
-      cpLogD: false,
+      cpLogD: true,
       PTP: false,
-      Prosilico: false
+      Prosilico: false,
+      VadsomHelst: true,
     }
 
-    this.changeMethods = this.changeMethods.bind(this);
+    this.changeModels = this.changeModels.bind(this);
   }
 
   // Functions:
-  changeMethods(e) {
+  changeModels(e) {
     let m = e.target.dataset.message;
     this.setState({ [m]: !this.state[m]});
   }
@@ -29,8 +30,8 @@ export class App extends Component {
     return (
       <div>
         <Header/>
-        <MenuBox methods={this.state} changeMethods={this.changeMethods}/>
-        <ResultList methods={this.state} />
+        <MenuBox models={this.state} changeModels={this.changeModels}/>
+        <ResultList models={this.state} />
       </div>
     )
   }
