@@ -17,7 +17,7 @@ export class Methods extends Component {
 
         return(
           <a key={i}
-            className={isActive}
+            className={"is-size-4 fa-bold " + isActive} // Textsize, 7-1
             data-message={method}
             onClick={this.props.changeMethods} >
             {method}

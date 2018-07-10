@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class Header extends Component {
   render() {
     return (
-      <section className="hero is-danger">
+      <section className="hero is-warning">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Header }from './Header';
 import { MenuBox } from './MenuBox';
 import { ResultList } from './ResultList';
+import 'bulma/css/bulma.css';
 
 export class App extends Component {
   constructor(props) {

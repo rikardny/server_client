@@ -19,9 +19,9 @@ export class PredictionStats extends Component {
   // Render:
   render() {
     return (
-      <article className="message is-dark">
+      <article className="message">
         <div className="message-body">
-          {this.state.stats.map((entry, i) => <li key={i}> {entry.id} --> {entry.name}</li>)}
+          {this.state.stats.map((entry, i) => <p key={i}> {entry.id}. {entry.name}</p>)}
         </div>
       </article>
     )
