@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header }from './Header';
+import { Header } from './Header';
 import { MenuBox } from './MenuBox';
 import { ResultList } from './ResultList';
 import 'bulma/css/bulma.css';
