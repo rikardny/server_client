@@ -28,8 +28,8 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <Header/>
-        <MenuBox models={this.state} changeModels={this.changeModels}/>
+        <Header />
+        <MenuBox models={this.state} changeModels={this.changeModels} />
         <ResultList models={this.state} />
       </div>
     )
