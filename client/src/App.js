@@ -10,10 +10,9 @@ export class App extends Component {
 
     this.state = {
       Metpred: false,
-      cpLogD: true,
+      cpLogD: false,
       PTP: false,
       Prosilico: false,
-      VadsomHelst: true,
     }
 
     this.changeModels = this.changeModels.bind(this);
