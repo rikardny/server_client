@@ -4,8 +4,9 @@ export class Models extends Component {
 
   // Render:
   render() {
-    let availableModels = Object.keys(this.props.models);
-    let activeModels = Object.values(this.props.models);
+    let models = this.props.models;
+    let availableModels = Object.keys(models);
+    let activeModels = Object.values(models);
 
     let modelList = availableModels.map(
       (model, i) => {

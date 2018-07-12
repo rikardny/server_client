@@ -12,14 +12,14 @@ export class ResultBox extends Component {
 
           <div className="tile is-parent is-3">
             <div className="tile is-child">
-              <PredictionImage />
+              <PredictionImage smiles={this.props.smiles} />
             </div>
           </div>
 
           <div className="tile is-parent">
             <div className="tile is-child">
               <p className="subtitle" >Prediction data:</p>
-              <PredictionStats />
+              <PredictionStats smiles={this.props.smiles} />
             </div>
           </div>
 

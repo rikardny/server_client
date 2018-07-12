@@ -17,7 +17,7 @@ export class ResultList extends Component {
         if (activeModels[i]) {
           listItem = (
             <div className="section" style={boxStyling} key={i}>
-              <ResultBox model={model}/>
+              <ResultBox model={model} smiles={this.props.smiles} />
             </div>
           );
         }

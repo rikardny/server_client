@@ -4,28 +4,47 @@ const fetch = require('isomorphic-fetch');
 const app = express();
 const port = process.env.PORT || 5000;
 
-const testAPI = 'https://jsonplaceholder.typicode.com/'
-
 // Routes:
-app.get('/api/:method', (request, response) => {
-  let method = request.params.method;
-  metpred(method).then(data => response.send(data));
+app.get('/:model/:predictionType', (request, response) => {
+  let model = request.params.model;
+  let predictionType = request.params.predictionType;
+  let smiles = request.query.smiles;
+
+  let url = "https://" + model + ".service.pharmb.io/v1/" + predictionType + "?smiles=" + smiles;
+
+  console.log("Attempting fetch from " + url);
+
+  loadData(url).then(data => response.send(data));
 });
 
 
-
 // Functions:
-async function metpred(method) {
-  console.log('Fetching from "' + testAPI + method + '"')
-  const response = await fetch(testAPI + method);
-  if (response.status === 200) {
-    console.log("Fetching " + method + " successful!")
-    const data = await response.json();
-    return data;
+const loadData = async (url) => {
+  const response = await fetch(url);
+
+  switch (response.status) {
+    case 200:
+      console.log("---- Fetch successful! ----");
+      break;
+    case 400:
+      console.log(">>>> SMILES not possible to parse <<<<");
+      break;
+    case 500:
+      console.log(">>>> Server error <<<<");
+      break;
+    default:
+      console.log("Something went wrong...");
   }
-  else {
-    console.log("FAILED")
-    return 'Error!'}
+
+  let type = response.headers.get("content-type");
+
+  if (type === "application/json") {
+    console.log("Response type is json")
+    return response.json();
+  } else {
+    console.log("Response is not json (plain text or image)");
+    return response.text();
+  }
 }
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

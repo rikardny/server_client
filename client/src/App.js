@@ -30,7 +30,7 @@ export class App extends Component {
       <div>
         <Header />
         <MenuBox models={this.state} changeModels={this.changeModels} />
-        <ResultList models={this.state} />
+        <ResultList models={this.state} smiles={this.state.smiles} />
       </div>
     )
   }

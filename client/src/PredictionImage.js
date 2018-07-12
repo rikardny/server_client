@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
 
 export class PredictionImage extends Component {
-  state = { url: '' }
+  constructor(props) {
+    super(props);
+    this.state = { data: '', smiles: this.props.smiles };
+    this.getPredictionImage = this.getPredictionImage.bind(this);
+  }
 
   // Lifecycle Methods:
   componentDidMount() {
+    console.log(this.props.smiles);
     this.getPredictionImage()
-      .then( res => this.setState({ url: res }));
+      .then( body => this.setState({ data: body }));
   }
 
   // Functions:
   async getPredictionImage() {
-    const response = await fetch('/api/photos');
-    const body = await response.json();
-    let rand = Math.floor((Math.random() * 5000) + 1); // Extra flare!!!
-    return body[rand].url;
+    const response = await fetch('/metpred/predictionImage?smiles=' + this.state.smiles);
+    const responseText = await response.text();
+    const body = <span dangerouslySetInnerHTML={{__html: responseText }} />
+    return body;
+  }
+
+  handleClick() {
+    this.getPredictionImage().then( body => this.setState({ data: body }));
   }
 
   // Render:
   render() {
     return (
       <div>
-        <img src={this.state.url} alt='molecule' width='100%'/>
+        <p><button onClick={this.handleClick.bind(this)} /></p>
+        <p>{this.props.smiles}</p>
+        <p>{this.state.data}</p>
       </div>
     )
   }
